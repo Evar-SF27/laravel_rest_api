@@ -53,7 +53,7 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer, Request $request)
     {
-        $includeInvoices = $request->query('includeInovices');
+        $includeInvoices = $request->query('includeInvoices');
 
         if ($includeInvoices) {
             return new CustomerResource($customer->LoadMissing('invoices'));
